@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, Literal
 from datetime import datetime
 
 import torch
@@ -16,7 +16,7 @@ from .hi_diffusers.schedulers.flash_flow_match import FlashFlowMatchEulerDiscret
 class HiDream(BaseImageGenerator):
     def __init__(
             self,
-            model_type: str,
+            model_type: Literal["dev", "full", "fast"] = "full",
             hidream_path: str = "/root/share/models",
             llama_path: str = "/root/share/models/modelscope/LLM-Research/Meta-Llama-3.1-8B-Instruct",
         ):
